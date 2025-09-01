@@ -5,12 +5,13 @@ object galvan{
         sueldo = _sueldo
     }
     method gastar(cuanto){ sueldo = sueldo - cuanto }
-    method deuda(){
+    /*method deuda(){
         if(dinero < 0){
-            deuda
+            deuda = 
         }
-    }
-    method dinero() {}
+        esto hay que pasarlo a dinero negativo 
+    }*/
+    method dinero() = sueldo
 }
 object baigorria{
     //var sueldo = esto varia segbaigorriabaigorriaun se venda una empanada 
@@ -18,11 +19,11 @@ object baigorria{
     var montoPorEmpanada = 15
     var vecesCobrado = 0
     var totalCobrado = 0
-    method venderEmpenada(){
-        cantDeEmpanadasVendidas = cantDeEmpanadasVendidas + 1
+    method venderEmpanadas(cantidad){
+        cantDeEmpanadasVendidas = cantDeEmpanadasVendidas + cantidad
     } 
     method sueldo() = cantDeEmpanadasVendidas * montoPorEmpanada //  mensaje polimorfico 
-    method totalcobrado() {
+    method totalCobrado() {
         totalCobrado = totalCobrado + (cantDeEmpanadasVendidas * montoPorEmpanada)//este metodo causa un efecto, a total cobrado se le suma el sueldo, el acumulador suma 1 cuando se cobra y sueldo
                         //se queda en cero
         vecesCobrado = vecesCobrado + 1
@@ -34,4 +35,5 @@ object gimenez{
     var dinero = 300000
     method dinero() {return dinero } // method dinero() = dinero
     method pagarA(empleado){dinero = dinero - empleado.sueldo()}
+
 }
